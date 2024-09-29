@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icb.dal.mapper.CompanyMapper">
+  <resultMap id="BaseResultMap" type="com.icb.dal.entity.Company">
+    <!--@mbg.generated-->
+    <!--@Table icb_company-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="unified_social_code" jdbcType="VARCHAR" property="unifiedSocialCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="admin_user_id" jdbcType="BIGINT" property="adminUserId" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="created_by" jdbcType="BIGINT" property="createdBy" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+    <result column="updated_by" jdbcType="BIGINT" property="updatedBy" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, unified_social_code, `status`, admin_user_id, created_at, created_by, 
+    updated_at, updated_by
+  </sql>
+</mapper>

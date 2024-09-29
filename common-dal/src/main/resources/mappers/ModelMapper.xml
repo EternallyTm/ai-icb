@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icb.dal.mapper.ModelMapper">
+  <resultMap id="BaseResultMap" type="com.icb.dal.entity.Model">
+    <!--@mbg.generated-->
+    <!--@Table icb_model-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name_cn" jdbcType="VARCHAR" property="nameCn" />
+    <result column="name_en" jdbcType="VARCHAR" property="nameEn" />
+    <result column="deploy_method" jdbcType="TINYINT" property="deployMethod" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="model_url" jdbcType="VARCHAR" property="modelUrl" />
+    <result column="app_key" jdbcType="VARCHAR" property="appKey" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="created_by" jdbcType="BIGINT" property="createdBy" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+    <result column="updated_by" jdbcType="BIGINT" property="updatedBy" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, name_cn, name_en, deploy_method, `type`, model_url, app_key, created_at, created_by, 
+    updated_at, updated_by
+  </sql>
+</mapper>

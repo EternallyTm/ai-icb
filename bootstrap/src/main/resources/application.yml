@@ -1,0 +1,91 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://43.136.112.217:3306/ai_icb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: ai_icb
+      password: ai_icb_2024
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      #Oracle需要打开注释
+      #validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        #login-username: admin
+        #login-password: admin
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: false
+        wall:
+          config:
+            multi-statement-allow: true
+  mail:
+    from: 1028106567@qq.com
+    host: smtp.qq.com
+    password: uwfvyejsmzudbfeh
+    port: 587
+    username: 1028106567@qq.com
+
+
+  data:
+    redis:
+      port: 6379
+      host: 43.136.112.217
+      password: xing123
+      database: 0
+  ai:
+    zhipuai:
+#      base-url: https://open.bigmodel.cn/api/paas/v4/chat/completions
+      api-key: 01add86cfbcd0490e0fb0de5d061bc3a.UKQMnp5a9YNXE8Vj
+mybatis-plus:
+  mapper-locations: classpath*:/mappers/*.xml
+  typeAliasesPackage: com.icb.dal.entity
+  global-config:
+    db-config:
+      id-type: AUTO
+      logic-delete-value: -1
+      logic-not-delete-value: 0
+    banner: false
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+
+sso:
+  login:
+    token:
+      remember-me-ttd: 7
+      ttl: 60
+  auth:
+    auth-check: true
+
+#swagger:
+#  base-packages: com.ai.genius.server.controller
+#  enable: true
+
+cors:
+  domain: http://localhost:4000/
+
+#logging:
+#  level:
+#    root: DEBUG
+#    org.springframework: DEBUG
+#    reactor: DEBUG
+#    org.springframework.web.reactive: DEBUG
+server:
+  servlet:
+    context-path: /api/icb

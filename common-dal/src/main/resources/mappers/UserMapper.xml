@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icb.dal.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.icb.dal.entity.User">
+    <!--@mbg.generated-->
+    <!--@Table icb_user-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="created_by" jdbcType="BIGINT" property="createdBy" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+    <result column="updated_by" jdbcType="BIGINT" property="updatedBy" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, username, email, mobile, `status`, `type`, company_id, `password`, created_at, 
+    created_by, updated_at, updated_by
+  </sql>
+
+  <select id="findByUsername" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM icb_user
+    WHERE username = #{username}
+  </select>
+</mapper>

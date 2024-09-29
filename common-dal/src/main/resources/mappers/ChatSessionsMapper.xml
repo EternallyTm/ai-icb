@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icb.dal.mapper.ChatSessionsMapper">
+  <resultMap id="BaseResultMap" type="com.icb.dal.entity.ChatSessions">
+    <!--@mbg.generated-->
+    <!--@Table icb_chat_sessions-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, title, user_id, created_at
+  </sql>
+
+  <select id="selectByUserId" resultType="com.icb.dal.entity.ChatSessions">
+    SELECT
+        <include refid="Base_Column_List" />
+    FROM icb_chat_sessions
+    WHERE user_id = #{userId} ORDER BY created_at DESC
+  </select>
+</mapper>

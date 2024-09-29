@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icb.dal.mapper.MenuMapper">
+  <resultMap id="BaseResultMap" type="com.icb.dal.entity.Menu">
+    <!--@mbg.generated-->
+    <!--@Table icb_menu-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="pid" jdbcType="BIGINT" property="pid" />
+    <result column="use_scenes" jdbcType="INTEGER" property="useScenes" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+    <result column="redirect" jdbcType="VARCHAR" property="redirect" />
+    <result column="perms" jdbcType="VARCHAR" property="perms" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="hidden" jdbcType="BIT" property="hidden" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="order_num" jdbcType="INTEGER" property="orderNum" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="created_by" jdbcType="BIGINT" property="createdBy" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+    <result column="updated_by" jdbcType="BIGINT" property="updatedBy" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, pid, use_scenes, `path`, redirect, perms, `type`, `status`, icon, hidden, 
+    code, order_num, created_at, created_by, updated_at, updated_by
+  </sql>
+</mapper>
